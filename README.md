@@ -23,7 +23,7 @@
 
 ## **Apresentação**
 
-O "sempreAjudar" é um projeto de conclsuão de curso do bootcamp de Back-end da [{reprograma}](https://reprograma.com.br/) em parceria com a [Accenture](https://www.accenture.com/br-pt). O projeto consiste na construção de uma API que tem como objetivo realizar doações para diversas ONGs do Brasil.
+O "sempreAjudar" é um projeto de conclusão de curso do bootcamp de Back-end da [{reprograma}](https://reprograma.com.br/) em parceria com a [Accenture](https://www.accenture.com/br-pt). O projeto consiste na construção de uma API que tem como objetivo realizar doações para diversas ONGs do Brasil.
 
 ## **Objetivo**
 
@@ -332,7 +332,7 @@ A partir daí nasceu o sempreAjudar, uma API que permite realizar doações a di
 
 ## **Instalação**
 
-- Faça um fork ou um clone do projeto pelo link (<>);
+- Faça um fork ou um clone do projeto pelo link (<https://github.com/carolana/sempreAjudar.git>);
 - Instale as dependências necessárias executando o comando 'npm install';
 - Crie um .env com o parâmetro `MONGODB_URL` e  `SECRET` e coloque a sua conexão com o robo3T e sua chave privada
 - Para executar a API, execute o comando 'npm start'
