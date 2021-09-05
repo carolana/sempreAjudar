@@ -17,7 +17,6 @@
 - [Tecnologias](#tecnologias)
 - [REST API](#RESTAPI)
 - [Instalação](#instalação)
-- [Referências](#referências)
 
 </br>
 
