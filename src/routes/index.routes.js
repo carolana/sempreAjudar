@@ -3,7 +3,7 @@ const router = express.Router()
 const controller = require('../controllers/indexController')
 
 
-router.get('/sempreAjudar', controller.welcome)
+router.get('/', controller.welcome)
 
 
 module.exports = router
