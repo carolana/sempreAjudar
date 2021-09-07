@@ -14,7 +14,7 @@ const donateRouter = require("./routes/donate.routes")
 const usersRoutes = require("./routes/users.routes")
 const index = require("./routes/index.routes")
 
-app.use('/sempreAjudar', index)
+app.use('/', index)
 app.use('/sempreAjudar', ongsRouter)
 app.use('/sempreAjudar', donateRouter)
 app.use('/sempreAjudar', usersRoutes)
