@@ -15,8 +15,8 @@ const usersRoutes = require("./routes/users.routes")
 const index = require("./routes/index.routes")
 
 app.use('/', index)
-app.use('/sempreAjudar', ongsRouter)
-app.use('/sempreAjudar', donateRouter)
-app.use('/sempreAjudar', usersRoutes)
+app.use('/ong', ongsRouter)
+app.use('/donate', donateRouter)
+app.use('/users', usersRoutes)
 
 module.exports = app

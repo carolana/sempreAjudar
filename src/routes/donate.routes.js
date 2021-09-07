@@ -3,9 +3,9 @@ const router = express.Router()
 const controller = require('../controllers/donateController')
 
 
-router.get('/allDonates', controller.getAllDonates)
-router.post("/donate", controller.newDonate)
-router.patch('/updateDonate/:id', controller.updateValueDonate)
+router.get('/', controller.getAllDonates)
+router.post("/create", controller.newDonate)
+router.patch('/update/:id', controller.updateValueDonate)
 
 
 

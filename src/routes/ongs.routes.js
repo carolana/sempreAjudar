@@ -3,9 +3,9 @@ const router = express.Router()
 const controller = require('../controllers/ongsController')
 
 
-router.get('/ongs', controller.getAllOngs)
-router.post('/createONG', controller.newOng)
-router.get('/ong/:id', controller.getOngById)
+router.get('/', controller.getAllOngs)
+router.post('/create', controller.newOng)
+router.get('/:id', controller.getOngById)
 router.delete('/delete/:id', controller.deleteOng)
 
 module.exports = router
