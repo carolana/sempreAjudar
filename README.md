@@ -15,7 +15,7 @@
 - [Funcionalidades](#funcionalidades)  
 - [Arquitetura](#arquitetura)    
 - [Tecnologias](#tecnologias)
-- [REST API](#RESTAPI)
+- [REST API](#rest-api)
 - [Instalação](#instalação)
 
 </br>
