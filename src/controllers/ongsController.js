@@ -17,7 +17,7 @@ const newOng = async (req, res) => {
     const token = authHeader.split(" ")[1]
 
     if (!token) {
-        return res.status(403).json({message: "Não existe nenhum autorização definida"})
+        return res.status(403).send({message: "Não existe nenhum autorização definida"})
       }
 
     jwt.verify(token, SECRET, async (err) => {
@@ -33,7 +33,7 @@ const newOng = async (req, res) => {
     })
     const OngJaExiste = await Ong.findOne({nome: req.body.nome})
     if(OngJaExiste) {
-        return res.status(409).json({error: 'ONG já cadastrada.'})
+        return res.status(409).send({error: 'ONG já cadastrada.'})
     }
     try {
         const novaONG = await ong.save()
@@ -50,7 +50,7 @@ const getOngById = async (req, res) => {
     if(OngById) {
         res.json(OngById)
     } else {
-        res.status(404).json({message: 'ONG não encontrada'})
+        res.status(404).send({message: 'ONG não encontrada'})
     }
 }
 
@@ -59,7 +59,7 @@ const deleteOng = async (req,res) => {
     const token = authHeader.split(" ")[1]
 
     if (!token) {
-      return res.status(403).json({message: "Não existe nenhum autorização definida"})
+      return res.status(403).send({message: "Não existe nenhum autorização definida"})
     }
 
     jwt.verify(token, SECRET, async (err) => {
@@ -68,7 +68,7 @@ const deleteOng = async (req,res) => {
         }
     const ong = await Ong.findById(req.params.id)
     if(ong == null) {
-        return res.status(404).json({message: "ONG não encontrada"})
+        return res.status(404).send({message: "ONG não encontrada"})
     }
     ong.deleteOne(
         {id: req.params.id},
@@ -76,7 +76,7 @@ const deleteOng = async (req,res) => {
             if (err) {
                 res.status(500).json({message: err.message})
             } else {
-                res.status(200).json({message: "ONG deletada com sucesso"})
+                res.status(200).send({message: "ONG deletada com sucesso"})
             }
         }
         )

@@ -39,7 +39,7 @@ const updateValueDonate = async (req, res) => {
     const token = authHeader.split(" ")[1]
 
     if (!token) {
-      return res.status(403).json({message: "Não existe nenhum autorização definida"})
+      return res.status(403).send({message: "Não existe nenhum autorização definida"})
     }
     jwt.verify(token, SECRET, async (err) => {
         if(err) {
@@ -48,7 +48,7 @@ const updateValueDonate = async (req, res) => {
     try {
         const donate = await Donate.findById(req.params.id)
         if (donate == null) {
-            return res.status(404).json({message: 'Doação não encontrada'})
+            return res.status(404).send({message: 'Doação não encontrada'})
         }
         if (req.body != null) {
             donate.valor = req.body.valor

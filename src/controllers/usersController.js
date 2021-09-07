@@ -24,7 +24,7 @@ const login = (req, res) => {
     }
     const senhaValida = bcrypt.compareSync(req.body.senha, userEncontrado.senha)
     if(!senhaValida) {
-      return res.status(401).json({message: "Login não autorizado"})
+      return res.status(401).send({message: "Login não autorizado"})
     }
     const token = jwt.sign({email: req.body.email}, SECRET)
     res.status(200).json({message: "Login realizado com sucesso", token: token})
