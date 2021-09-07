@@ -1,7 +1,7 @@
 const express = require("express")
 
 
-const welcome = async (req, res) => {
+const welcome = (req, res) => {
     res.status(200).json({
         "projeto": "sempreAjudar",
         "version": "1.0.0",
