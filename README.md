@@ -61,7 +61,8 @@ A partir daí nasceu o sempreAjudar, uma API que permite realizar doações a di
    |         |- 📄 users.js
    |
    |    |- 📁 routes
-   |         |- 📄 donate.routes.js 
+   |         |- 📄 donate.routes.js
+   |         |- 📄 index.routes.js
    |         |- 📄 ongs.routes.js
    |         |- 📄 users.routes.js
    |
@@ -72,7 +73,8 @@ A partir daí nasceu o sempreAjudar, uma API que permite realizar doações a di
    |- 📄 .env.example
    |- 📄 .gitignore
    |- 📄 package-lock.json
-   |- 📄 package
+   |- 📄 package.json
+   |  📄 Procfile
    |- 📄 server.js
 ```
 ## **Tecnologias**
@@ -94,7 +96,7 @@ A partir daí nasceu o sempreAjudar, uma API que permite realizar doações a di
 
 #### Request
 
- `POST /sempreAjudar/users/create`
+ `POST /users/create`
 
 ```
 {
@@ -122,7 +124,7 @@ A partir daí nasceu o sempreAjudar, uma API que permite realizar doações a di
 
 ### Realizar o login
 
- `POST /sempreAjudar/users/login`
+ `POST /users/login`
  
  ```
  {
@@ -154,7 +156,7 @@ A partir daí nasceu o sempreAjudar, uma API que permite realizar doações a di
 
 #### Request
 
- `GET /sempreAjudar/ongs/`
+ `GET https://sempre-ajudar.herokuapp.com/ong`
 
 
 #### Response
@@ -174,7 +176,7 @@ A partir daí nasceu o sempreAjudar, uma API que permite realizar doações a di
 
 #### Request
 
- `POST /sempreAjudar/createONG/`
+ `POST /ong/create`
 
 ```
 {
@@ -207,7 +209,7 @@ A partir daí nasceu o sempreAjudar, uma API que permite realizar doações a di
 
 #### Request
 
- `GET /sempreAjudar/ong/613536dad6095628251d1c39`
+ `GET https://sempre-ajudar.herokuapp.com/ong/6137cd9716df24ab47f7808b`
 
 ```
 {
@@ -239,7 +241,7 @@ A partir daí nasceu o sempreAjudar, uma API que permite realizar doações a di
 
 #### Request
 
- `GET /sempreAjudar/delete/613536dad6095628251d1c39`
+ `DELETE /ong/delete/6137cd9716df24ab47f7808b`
 
  #### Response
 
@@ -259,7 +261,7 @@ A partir daí nasceu o sempreAjudar, uma API que permite realizar doações a di
 
 #### Request
 
- `GET /sempreAjudar/allDonates`
+ `GET https://sempre-ajudar.herokuapp.com/donate`
 
  #### Response
 
@@ -276,7 +278,7 @@ A partir daí nasceu o sempreAjudar, uma API que permite realizar doações a di
 
 #### Request
 
- `POST /sempreAjudar/donate`
+ `POST /donate/create`
 
  ```
 {
@@ -305,7 +307,7 @@ A partir daí nasceu o sempreAjudar, uma API que permite realizar doações a di
 
 #### Request
 
- `PATCH /sempreAjudar/updateDonate/61353beb8eabd1e07abbda71`
+ `PATCH /donate/update/6137d09716df24ab47f780af`
 
 ```
 {
