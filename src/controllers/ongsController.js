@@ -17,12 +17,12 @@ const newOng = async (req, res) => {
     const token = authHeader.split(" ")[1]
 
     if (!token) {
-        return res.status(403).send({message: "Não existe nenhum autorização definida"})
+        return res.status(403).json({message: "Não existe nenhum autorização definida"})
       }
 
     jwt.verify(token, SECRET, async (err) => {
         if(err) {
-            res.status(403).send({message: 'Token inválido', err})
+            res.status(403).json({message: 'Token inválido', err})
         }
     const ong = new Ong ({
         _id: new mongoose.Types.ObjectId(),
@@ -59,12 +59,12 @@ const deleteOng = async (req,res) => {
     const token = authHeader.split(" ")[1]
 
     if (!token) {
-      return res.status(403).send({message: "Não existe nenhum autorização definida"})
+      return res.status(403).json({message: "Não existe nenhum autorização definida"})
     }
 
     jwt.verify(token, SECRET, async (err) => {
         if(err) {
-            res.status(403).send({message: 'Token inválido', err})
+            res.status(403).json({message: 'Token inválido', err})
         }
     const ong = await Ong.findById(req.params.id)
     if(ong == null) {

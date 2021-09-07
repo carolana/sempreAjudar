@@ -18,7 +18,7 @@ const newDonate = async (req,res) => {
     }
     jwt.verify(token, SECRET, async (err) => {
         if(err) {
-            res.status(403).send({message: 'Token inválido', err})
+            res.status(403).json({message: 'Token inválido', err})
         }
     const donate = new Donate ({
         _id: new mongoose.Types.ObjectId(),
@@ -39,11 +39,11 @@ const updateValueDonate = async (req, res) => {
     const token = authHeader.split(" ")[1]
 
     if (!token) {
-      return res.status(403).send({message: "Não existe nenhum autorização definida"})
+      return res.status(403).json({message: "Não existe nenhum autorização definida"})
     }
     jwt.verify(token, SECRET, async (err) => {
         if(err) {
-            res.status(403).send({message: 'Token inválido', err})
+            res.status(403).json({message: 'Token inválido', err})
         }
     try {
         const donate = await Donate.findById(req.params.id)
@@ -55,7 +55,7 @@ const updateValueDonate = async (req, res) => {
         }        
         const updateValueDonate =  await donate.save()
         console.log(updateValueDonate)
-        res.status(200).send(updateValueDonate)
+        res.status(200).json(updateValueDonate)
     } catch (err) {
         res.status(500).json({message: err.message})
     }
