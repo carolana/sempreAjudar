@@ -137,7 +137,7 @@
         },
         "/ong/create": {
             "post": {
-                "summary": "Criação de uuma ONG",
+                "summary": "Criação de uma ONG",
                 "description": "Essa rota é a responsável por criar uma ONG",
                 "tags": ["ONG"],
                 "security": { "bearerAuth": [] },
@@ -148,7 +148,7 @@
                                 "$ref": "#/components/schemas/ONG"
                             },
                             "examples": {
-                                "user": {
+                                "ong": {
                                     "value": {
                                         "nome": "Fundação Gol de Letra",
                                         "descricao": "A Fundação Gol de Letra é uma ONG, criada no dia 10 de dezembro de 1998 pelos ex-jogadores de futebol Raí e Leonardo. A data, escolhida propositalmente, marca também o Dia dos Direitos Humanos.",
@@ -176,6 +176,30 @@
                         "400": {
                             "description": "Bad Request"
                         }
+                    }
+                }
+            }
+        },
+        "/ong/delete/{id}": {
+            "delete": {
+                "summary": "Excluir uma ONG",
+                "description": "Essa rota é a responsável por deletar uma ONG",
+                "tags": ["ONG"],
+                "security": { "bearerAuth": [] },
+                "parameters": [
+                    {
+                        "name": "Id da ONG",
+                        "in": "path",
+                        "description": "ongId",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Ong não encontrada"
                     }
                 }
             }
