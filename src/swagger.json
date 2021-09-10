@@ -36,7 +36,7 @@
         "schemas": {
             "User": {
                 "type": "object",
-                "proprietis": {
+                "proprieties": {
                     "nome": {
                         "type": "string"
                     },
