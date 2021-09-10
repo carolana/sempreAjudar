@@ -77,7 +77,28 @@
                             }
                         }
                     }
+                },
+                "responses": {
+                    "404": {
+                        "description": "Usuário não encontrado"
+                    },
+                    "401": {
+                        "description": "Login não autorizado"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref":"#/components/schemas/UserLogin"
+                                }
+                            }
+                        }
+                    }
                 }
+                
+                
 
             }
         }
