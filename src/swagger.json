@@ -7,5 +7,47 @@
             "email": "carolanap7@gmail.com"
         },
         "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://sempre-ajudar.herokuapp.com/",
+            "description": "API desenvolvida"
+        }
+    ],
+    "paths" : {
+        "/users/create": {
+            "post": {
+                "summary": "Criação de um usuário",
+                "description": "Essa rota é a responsável por criar um usuário",
+                "tags": ["Users"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "User": {
+                "type": "object",
+                "proprietis": {
+                    "nome": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "senha": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
     }
 }
