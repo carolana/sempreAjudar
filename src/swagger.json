@@ -68,7 +68,7 @@
                                 "$ref": "#/components/schemas/UserLogin"
                             },
                             "examples": {
-                                "user": {
+                                "users": {
                                     "value": {
                                         "email": "maria@email.com",
                                         "senha": "teste123"
@@ -107,7 +107,9 @@
                     "email": {
                         "type": "string"
                     },
-                    "senha": "string"
+                    "senha": {
+                        "type": "string"
+                    }
                 }
             }
         }
