@@ -140,7 +140,7 @@
                 "summary": "Criação de uma ONG",
                 "description": "Essa rota é a responsável por criar uma ONG",
                 "tags": ["ONG"],
-                "security": { "bearerAuth": [] },
+                "security": [{ "bearerAuth": [] }],
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -185,7 +185,7 @@
                 "summary": "Excluir uma ONG",
                 "description": "Essa rota é a responsável por deletar uma ONG",
                 "tags": ["ONG"],
-                "security": { "bearerAuth": [] },
+                "security": [{ "bearerAuth": [] }],
                 "parameters": [
                     {
                         "name": "Id da ONG",
@@ -200,6 +200,19 @@
                     },
                     "404": {
                         "description": "Ong não encontrada"
+                    }
+                }
+            }
+        },
+        "/donate": {
+            "get": {
+                "summary": "Buscar todas as doações já realizadas",
+                "description": "Buscar todas as doações já realizadas",
+                "tags": ["Donate"],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK"
                     }
                 }
             }
