@@ -230,7 +230,7 @@
                                 "$ref": "#/components/schemas/Donate"
                             },
                             "examples": {
-                                "ong": {
+                                "donate": {
                                     "value": {
                                         "valor": "89.97",
                                         "ong": "6137cdf716df24ab47f78091"
@@ -259,6 +259,53 @@
                         }
                     }
                 }
+            }
+        },
+        "/donate/update/{id}": {
+            "patch": {
+                "description": "Alterar valor de uma doação",
+                "summary": "Alterar valor de uma doação",
+                "tags": ["Donate"],
+                "parameters": [
+                    {
+                        "name": "Id da doação",
+                        "in": "path",
+                        "description": "donateId",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Donate"
+                            },
+                            "examples": {
+                                "donate": {
+                                    "value": {
+                                        "valor": "105.56"
+                                    }
+                                } 
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "404": {
+                        "description": "Doação não encontrada"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "$ref": "#/components/schemas/Donate"
+                            }
+                        }
+                    }
+                }
+            }
             }
         }
     },
