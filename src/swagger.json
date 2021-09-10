@@ -140,7 +140,7 @@
                 "summary": "Criação de uuma ONG",
                 "description": "Essa rota é a responsável por criar uma ONG",
                 "tags": ["ONG"],
-                "security": [{"bearerAuth": [] }],
+                "security": { "bearerAuth": [] },
                 "requestBody": {
                     "content": {
                         "application/json": {
