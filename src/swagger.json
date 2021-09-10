@@ -101,6 +101,19 @@
                 
 
             }
+        },
+        "/ong": {
+            "get": {
+                "summary": "Buscar todas as ONGs cadastradas",
+                "description": "Essa rota é a responsável por autenticar um usuário",
+                "tags": ["ONG"],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
         }
     },
     "components": {
