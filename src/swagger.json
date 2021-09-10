@@ -1,3 +1,11 @@
 {
-    
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API do sempreAjudar",
+        "description": "Essa API é do projeto final da {reprograma}",
+        "contact": {
+            "email": "carolanap7@gmail.com"
+        },
+        "version": "1.0.0"
+    }
 }
