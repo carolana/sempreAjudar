@@ -134,6 +134,51 @@
                     }
                 }
             }
+        },
+        "/ong/create": {
+            "post": {
+                "summary": "Criação de uuma ONG",
+                "description": "Essa rota é a responsável por criar uma ONG",
+                "tags": ["ONG"],
+                "security": [{"bearerAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ONG"
+                            },
+                            "examples": {
+                                "user": {
+                                    "value": {
+                                        "nome": "Fundação Gol de Letra",
+                                        "descricao": "A Fundação Gol de Letra é uma ONG, criada no dia 10 de dezembro de 1998 pelos ex-jogadores de futebol Raí e Leonardo. A data, escolhida propositalmente, marca também o Dia dos Direitos Humanos.",
+                                        "areaAtuacao": "Inclusão através do esporte"
+                                    }
+                                } 
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "409": {
+                        "description": "ONG já cadastrada"
+                    },
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref":"#/components/schemas/ONG"
+                                }
+                            }
+                        },
+                        "400": {
+                            "description": "Bad Request"
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -163,6 +208,26 @@
                     },
                     "senha": {
                         "type": "string"
+                    }
+                }
+            },
+            "ONG": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "nome": {
+                        "type": "string"
+                    },
+                    "descricao": {
+                        "type": "string"
+                    },
+                    "areaAtuacao": {
+                        "type": "string"
+                    },
+                    "criadoEm": {
+                        "type": "number"
                     }
                 }
             }
