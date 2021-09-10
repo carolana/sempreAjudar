@@ -25,6 +25,15 @@
                         "application/json": {
                             "schema": {
                                 "$ref": "#/components/schemas/User"
+                            },
+                            "examples": {
+                                "user": {
+                                    "value": {
+                                        "nome": "Maria Santos",
+                                        "email": "maria@email.com",
+                                        "senha": "teste123"
+                                    }
+                                } 
                             }
                         }
                     }
