@@ -216,6 +216,50 @@
                     }
                 }
             }
+        },
+        "/donate/create": {
+            "post": {
+                "summary": "Doação de um valor",
+                "description": "Essa rota é a responsável por criar uma doação a uma ONG",
+                "tags": ["Donate"],
+                "security": [{ "bearerAuth": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Donate"
+                            },
+                            "examples": {
+                                "ong": {
+                                    "value": {
+                                        "valor": "89.97",
+                                        "ong": "6137cdf716df24ab47f78091"
+                                    }
+                                } 
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref":"#/components/schemas/Donate"
+                                }
+                            }
+                        },
+                        "400": {
+                            "description": "Bad Request"
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -265,6 +309,20 @@
                     },
                     "criadoEm": {
                         "type": "number"
+                    }
+                }
+            },
+            "Donate": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "valor": {
+                        "type": "number"
+                    },
+                    "ong": {
+                        "type": "string"
                     }
                 }
             }
