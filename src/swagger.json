@@ -37,6 +37,22 @@
                             }
                         }
                     }
+                },
+                "responses": {
+                    "404": {
+                        "description": "Bad Request"
+                    },
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref":"#/components/schemas/User"
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -53,6 +69,9 @@
                         "type": "string"
                     },
                     "senha": {
+                        "type": "string"
+                    },
+                    "id": {
                         "type": "string"
                     }
                 }
