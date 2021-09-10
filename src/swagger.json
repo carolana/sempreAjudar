@@ -43,7 +43,7 @@
                         "description": "Bad Request"
                     },
                     "201": {
-                        "description": "OK",
+                        "description": "Created",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -54,6 +54,31 @@
                         }
                     }
                 }
+            }
+        },
+        "/users/login": {
+            "post": {
+                "summary": "Login de um usuário",
+                "description": "Essa rota é a responsável por autenticar um usuário",
+                "tags": ["Users"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserLogin"
+                            },
+                            "examples": {
+                                "user": {
+                                    "value": {
+                                        "email": "maria@email.com",
+                                        "senha": "teste123"
+                                    }
+                                } 
+                            }
+                        }
+                    }
+                }
+
             }
         }
     },
@@ -75,7 +100,23 @@
                         "type": "string"
                     }
                 }
+            },
+            "UserLogin": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string"
+                    },
+                    "senha": "string"
+                }
             }
+        }
+    },
+    "securitySchemes": {
+        "bearerAuth": {
+            "type": "http",
+            "scheme": "bearer",
+            "bearerFormat": "JWT"
         }
     }
 }
