@@ -1,8 +1,8 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "API do sempreAjudar",
-        "description": "Essa API é do projeto final da {reprograma}",
+        "title": "sempreAjudar API Documentation",
+        "description": "O sempreAjudar é um projeto de conclusão de curso do bootcamp de Back-end da {reprograma} em parceria com a Accenture. O projeto consiste na construção de uma API que tem como objetivo realizar doações para diversas ONGs do Brasil.",
         "contact": {
             "email": "carolanap7@gmail.com"
         },
@@ -11,7 +11,7 @@
     "servers": [
         {
             "url": "https://sempre-ajudar.herokuapp.com/",
-            "description": "API desenvolvida"
+            "description": "sempreAjudar API"
         }
     ],
     "paths" : {
@@ -266,6 +266,7 @@
                 "description": "Alterar valor de uma doação",
                 "summary": "Alterar valor de uma doação",
                 "tags": ["Donate"],
+                "security": [{ "bearerAuth": [] }],
                 "parameters": [
                     {
                         "name": "Id da doação",
